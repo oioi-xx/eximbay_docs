@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <title>highlight</title> 
+        <meta http-equiv="content-type" content="text/html;charset=utf-8"> 
+        <link rel="stylesheet" href="./styles/tokyo-night-dark.min.css" rel="external nofollow" rel="external nofollow" > 
+        <link rel="stylesheet" href="./style.css">
+        <script src="./highlight.min.js"></script> 
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      </head> 
+    <body>
+      <header id="header"></header>
+      <aside id="aside">
+        <p>사이드바입니다</p>
+      </aside>
+      <div id="wrap">
+        <h1>API 목록</h1>
+        <p class="blue">version 1.0</p>
+        <h2 class="en">Exim API</h2>
+        <p>엑심베이 API 엔드포인트(Endpoint)와 객체 정보, 파라미터, 요청 및 응답 예제를 살펴보세요.</br>
+          엑심베이 API를 이용하면 웹 표준만으로 다양한 결제 수단의 결제 연동・승인・취소・조회・인증을 구현할 수 있습니다. </p>
+          <div class="line"></div>
+          <h3>지급대행</h3>
+          <p>지급대행 API를 사용해 상점 하위의 서브몰 정보를 관리하고 정산된 금액을 서브몰에 지급할 수 있습니다.</p>
+          <h3>서브몰등록</h3>
+          <div class="flex">
+            <h5 class="blue">POST</h5><h6>/v1/payouts/submalls </h6>
+          </div>
+          <p>상점 하위에 새로운 서브몰을 등록합니다.</p>
+          <h4>Request 파라미터</h4>
+          <pre> 
+              <code class="http"> 
+                  # 서브몰 등록 응답
+                  {
+                    "code": "0",
+                    "message": "success"
+                  }
+          </pre>
+      </div>> 
+    </body>
+</html>
