@@ -3,6 +3,7 @@
     <head> 
         <title>highlight</title> 
         <meta http-equiv="content-type" content="text/html;charset=utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./styles/tokyo-night-dark.min.css" rel="external nofollow" rel="external nofollow" > 
         <link rel="stylesheet" href="./style.css">
         <script src="./highlight.min.js"></script> 
@@ -10,9 +11,25 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       </head> 
     <body>
-      <header id="header"></header>
+      <header id="header">
+        <div id="logo"><img class="logos" src="./image/logo.svg" alt="#"></div>
+         <div class="gnb">
+          <a href="#">결제연동</a>
+          <a href="#">결제연동</a>
+          <a href="#">결제연동</a>
+        </div>
+      </header>
       <aside id="aside">
-        <p>사이드바입니다</p>
+        <div id="sidebar">
+          <ul id="list">
+            <li class="list1"><a href="#">API 목록</a></li>
+            <li class="list1"><a href="#">API 테스트</a></li>
+            <li class="list1"><a href="#">API 소식</a></li>
+            <li class="list1"><a href="#">SDK</a></li>  
+            <li class="list1"><a href="#">코드 목록</a>
+            </li>
+          </ul>
+        </div>
       </aside>
       <div id="wrap">
         <h1>API 목록</h1>
@@ -31,11 +48,30 @@
           <h4>Request 파라미터</h4>
           <pre> 
               <code class="http"> 
-                  # 서브몰 등록 응답
-                  {
-                    "code": "0",
-                    "message": "success"
-                  }
+                curl -X POST --location "https://api2-stg.eximbay.com/v1/payouts/submalls" \
+                    -H "accept: application/json" \
+                    -H "Content-Type: application/json" \
+                    -H "Authorization: Bearer noahApiKey" \
+                    -d "{
+                            \"submall_id\" : \"36\",
+                            \"submall_type\" : \"COMPANY\",
+                            \"country_code\" : \"KR\",
+                            \"submall_name\" : \"Test\",
+                            \"business_id\"  : \"354\",
+                            \"representative\" : \"Tester\",
+                            \"bank_account\" : [
+                                {
+                                   \"currency\" : \"KRW\",
+                                   \"country_code\" : \"KR\",
+                                   \"bank_code\" : \"003\",
+                                   \"bank_name\" : \"woori\",
+                                   \"account_number\" : \"123\",
+                                   \"depositor\" : \"tester\"
+                                }
+                            ],
+                            \"metadata\" : \"test\"
+                        }"
+                ```
           </pre>
       </div>> 
     </body>
