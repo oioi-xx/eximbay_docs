@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <title>highlight</title> 
+        <meta http-equiv="content-type" content="text/html;charset=utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles/base16/harmonic16-dark.min.css" rel="external nofollow" rel="external nofollow" > 
+        <link rel="stylesheet" href="./styles/style.css">
+        <script src="./highlight.min.js"></script> 
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      </head> 
+    <body>
+      <header id="header">
+        <div id="logo"><img class="logos" src="./image/logo.svg" alt="#"></div>
+         <div class="gnb">
+          <a href="./index.html">1번테마</a>
+          <a href="./theme2.html">2번테마</a>
+          <a href="./theme3.html">3번테마</a>
+          <a href="./theme4.html">4번테마</a>
+          <a href="./theme5.html">5번테마</a>
+        </div>
+      </header>
+      <aside id="aside">
+        <div id="sidebar">
+          <ul id="list">
+            <li class="list1"><a href="#">API 목록</a></li>
+            <li class="list1"><a href="#">API 테스트</a></li>
+            <li class="list1"><a href="#">API 소식</a></li>
+            <li class="list1"><a href="#">SDK</a></li>  
+            <li class="list1"><a href="#">코드 목록</a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <div id="wrap">
+        <div id="container">
+          <h1>API 목록</h1>
+          <p class="blue">version 1.0</p>
+          <h2 class="en">Exim API</h2>
+            <p>엑심베이 API 엔드포인트(Endpoint)와 객체 정보, 파라미터, 요청 및 응답 예제를 살펴보세요.</br>
+            엑심베이 API를 이용하면 웹 표준만으로 다양한 결제 수단의 결제 연동・승인・취소・조회・인증을 구현할 수 있습니다. </p>
+            <div class="line"></div>
+            <h3>지급대행</h3>
+            <p>지급대행 API를 사용해 상점 하위의 서브몰 정보를 관리하고 정산된 금액을 서브몰에 지급할 수 있습니다.</p>
+            <h3>서브몰등록</h3>
+            <div class="flex">
+              <h5 class="blue">POST</h5><h6>/v1/payouts/submalls </h6>
+            </div>
+            <p>상점 하위에 새로운 서브몰을 등록합니다.</p>
+            <h4>Request 파라미터</h4>
+            <pre> 
+                <code class="http"> 
+                  curl -X POST --location "https://api2-stg.eximbay.com/v1/payouts/submalls" \
+                      -H "accept: application/json" \
+                      -H "Content-Type: application/json" \
+                      -H "Authorization: Bearer noahApiKey" \
+                      -d "{
+                              \"submall_id\" : \"36\",
+                              \"submall_type\" : \"COMPANY\",
+                              \"country_code\" : \"KR\",
+                              \"submall_name\" : \"Test\",
+                              \"business_id\"  : \"354\",
+                              \"representative\" : \"Tester\",
+                              \"bank_account\" : [
+                                  {
+                                     \"currency\" : \"KRW\",
+                                     \"country_code\" : \"KR\",
+                                     \"bank_code\" : \"003\",
+                                     \"bank_name\" : \"woori\",
+                                     \"account_number\" : \"123\",
+                                     \"depositor\" : \"tester\"
+                                  }
+                              ],
+                              \"metadata\" : \"test\"
+                          }"
+                  ```
+            </pre>
+            <pre> 
+              <code class="http"> 
+                # 서브몰 등록 응답
+                {
+                  "code": "0",
+                  "message": "success"
+                }
+          </pre>
+          <pre>
+              <code class="html">
+                  "name": "payments-test",
+                  "version": "1.0.0",
+                  "description": "토스페이먼츠 테스트 프로젝트",
+                  "main": "app.js",
+                  "author": "김토페",
+                  "dependencies": {
+                    "@tosspayments/payment-sdk": "^1.0.0"
+                  }
+                }
+          </pre>
+        </div>
+      
+      </div>> 
+    </body>
+</html>
